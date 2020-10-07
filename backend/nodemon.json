@@ -1,0 +1,8 @@
+{
+    "env": {
+        "DB_USER": "andinjo",
+        "DB_PASSWORD": "andinjo1",
+        "DB_NAME": "Ecom",
+        "JWT_KEY": "supersecret_do_not_share"
+    }
+}
