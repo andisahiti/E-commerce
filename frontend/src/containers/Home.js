@@ -26,7 +26,7 @@ function Home() {
 
 
     const [Filters, setFilters] = useState({
-        price: [],
+        types: [],
         price: []
     })
 
