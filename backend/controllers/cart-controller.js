@@ -85,7 +85,6 @@ const removeItem = (req, res) => {
             })
 
             Product.find({ '_id': { $in: array } })
-                .populate('writer')
                 .exec((err, cartDetail) => {
                     return res.status(200).json({
                         cartDetail,
