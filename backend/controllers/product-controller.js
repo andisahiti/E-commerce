@@ -92,15 +92,6 @@ const getProducts = async (req, res, next) => {
 const getItems = (req, res) => {
     let productIds = req.query.id || [];
 
-
-    if (req.body.cartItems) {
-        productIds = [];
-        productIds = req.body.cartItems.map(item => {
-            return item
-        })
-
-    }
-
     Product.find({ '_id': { $in: productIds } })
         .exec((err, product) => {
             if (err) return res.status(400).send(err)
