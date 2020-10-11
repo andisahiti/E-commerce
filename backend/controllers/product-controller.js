@@ -86,29 +86,7 @@ const getProducts = async (req, res, next) => {
     res.json({ products: products, postSize: products.length })
 }
 
-const getProductsById = (req, res, next) => {
-    let type = req.query.type
-    let productIds = req.query.id
 
-
-    if (type === "array") {
-        //vin plot id psh(11213,123,123)
-        //i shtin njo ka njo narray edhe i filtrojm
-        let ids = req.query.id.split(',');
-        productIds = [];
-        productIds = ids.map(item => {
-            return item
-        })
-    }
-
-
-    Product.find({ '_id': { $in: productIds } })
-        .populate('writer')
-        .exec((err, product) => {
-            if (err) return res.status(404).json({ message: 'Could not find product' })
-            return res.status(200).send(product)
-        })
-}
 
 
 const getItems = (req, res) => {
